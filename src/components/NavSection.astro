@@ -4,8 +4,29 @@ import MenuButton from "./MenuButton";
 import MenuDropdown from "./MenuDropdown";
 ---
 
-<nav class="flex w-full flex-row items-center justify-between px-8 py-10">
+<nav class="flex w-full flex-row items-center justify-between px-8 py-10 lg:py-12 xl:px-40">
   <Logo client:load />
   <MenuButton client:load />
   <MenuDropdown client:load />
+
+  <div class="hidden flex-row items-center gap-12 lg:flex">
+    {
+      ["features", "pricing", "contact"].map((link) => (
+        <a href="#" class="text-[13px] uppercase leading-snug tracking-[0.093rem] hover:text-soft-red">
+          {link}
+        </a>
+      ))
+    }
+
+    <button
+      class="h-10 rounded-md border-2 border-soft-red bg-soft-red px-8 text-[13px] font-medium uppercase tracking-[0.09375rem] text-white duration-200 hover:bg-white hover:text-soft-red"
+      >Login</button
+    >
+  </div>
 </nav>
+
+<style>
+  button {
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+  }
+</style>

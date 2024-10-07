@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { $menuOpen } from "../stores/menuOpen";
 import IconFacebook from "./icons/IconFacebook";
@@ -7,10 +8,21 @@ import IconTwitter from "./icons/IconTwitter";
 export default function MenuDropdown() {
   const menuOpen = useStore($menuOpen);
 
+  function handleResize() {
+    if (window.innerWidth > 1024) {
+      $menuOpen.set(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     menuOpen &&
     createPortal(
-      <div className="fixed inset-0 z-0 flex size-full flex-col justify-between bg-dark-blue bg-opacity-95 px-8 pb-12 pt-24">
+      <div className="fixed inset-0 z-0 flex size-full flex-col justify-between bg-dark-blue bg-opacity-95 px-8 pb-12 pt-24 lg:hidden">
         <div className="flex flex-col gap-6">
           <ul className="flex w-full flex-col">
             {["features", "pricing", "contact"].map((item) => (

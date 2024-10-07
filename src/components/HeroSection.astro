@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import illustrationHero from "../assets/illustration-hero.svg";
+---
+
+<section class="flex flex-col gap-12 lg:flex-row-reverse xl:pl-40">
+  <div class="group relative size-full overflow-x-clip">
+    <div class="absolute bottom-0 left-16 -z-10 h-4/5 w-[200%] rounded-full bg-soft-blue duration-200 group-hover:translate-x-full"></div>
+    <Image src={illustrationHero} alt="" class="relative z-0 w-full object-cover" />
+  </div>
+
+  <div class="flex flex-col items-center justify-center gap-8 px-8">
+    <div class="flex flex-col items-center justify-center gap-4 text-center lg:gap-6 lg:text-left">
+      <h1 class="text-[1.875rem] font-medium leading-10 lg:text-5xl lg:leading-none">A Simple Bookmark Manager</h1>
+      <p class="text-[15px] opacity-50 lg:text-lg">
+        A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it
+        for free.
+      </p>
+    </div>
+
+    <div class="xs:gap-3 flex w-full flex-row items-center gap-1 text-sm font-medium leading-7 *:duration-200 lg:gap-4">
+      <button
+        class="xs:px-4 h-12 w-full rounded-md border-2 border-soft-blue bg-soft-blue px-1 text-white hover:bg-white hover:text-soft-blue lg:max-w-[10.375rem] lg:px-6"
+        >Get it on Chrome</button
+      >
+      <button
+        class="bg-light-gray border-light-gray hover:border-dark-gray xs:px-4 h-12 w-full rounded-md border-2 px-1 text-opacity-75 hover:bg-white lg:max-w-[10.375rem] lg:px-6"
+        >Get it on Firefox</button
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  button {
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+  }
+</style>
