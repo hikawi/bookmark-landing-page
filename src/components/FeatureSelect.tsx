@@ -13,6 +13,7 @@ export default function FeatureSelect() {
           <button
             className={`w-full py-5 last-of-type:border-b-[1px] hover:text-soft-red focus:text-soft-red ${feature === index ? redUnderline : ""}`}
             onClick={() => $feature.set(index)}
+            key={index}
           >
             {item}
           </button>

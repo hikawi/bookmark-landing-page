@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  image: ImageMetadata;
+  ver: number;
+}
+
+const { name, image, ver } = Astro.props;
+---
+
+<div class="shadowed shifted flex w-full max-w-[17.5rem] flex-col justify-between gap-6 rounded-2xl pt-12">
+  <div class="flex h-auto flex-col items-center justify-center gap-8 px-6">
+    <div class="flex h-[6.25rem] w-full items-center justify-center">
+      <Image src={image} alt={name} class="object-contain" />
+    </div>
+
+    <div class="flex flex-col gap-1.5 text-center">
+      <h4 class="text-lg font-medium">Add to {name}</h4>
+      <p class="leading-7 opacity-50">Minimum version {ver}</p>
+    </div>
+  </div>
+
+  <!-- The dotted separator -->
+  <div class="dotted mt-2 h-1 w-full"></div>
+
+  <div class="w-full px-6 pb-6">
+    <button
+      class="h-12 w-full rounded-md border-2 border-soft-blue bg-soft-blue text-sm font-medium text-white duration-200 hover:bg-white hover:text-soft-blue"
+    >
+      Add & Install Extension
+    </button>
+  </div>
+</div>
+
+<style>
+  .shadowed {
+    box-shadow: 0px 10px 20px -5px rgba(73, 93, 207, 0.2);
+  }
+
+  .shifted:nth-child(2) {
+    @apply lg:mt-10;
+  }
+
+  .shifted:nth-child(3) {
+    @apply lg:mt-20;
+  }
+
+  .dotted {
+    background-image: url("../assets/bg-dots.svg");
+    @apply bg-contain bg-center bg-repeat-x;
+  }
+</style>

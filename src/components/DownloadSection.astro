@@ -1,0 +1,22 @@
+---
+import DownloadTab from "./DownloadTab.astro";
+
+import google from "../assets/logo-chrome.svg";
+import firefox from "../assets/logo-firefox.svg";
+import opera from "../assets/logo-opera.svg";
+---
+
+<section class="flex flex-col items-center justify-center gap-10 pt-32 lg:gap-12 lg:pt-40">
+  <div class="flex w-full max-w-[33.5rem] flex-col gap-0 px-8 text-center lg:gap-4">
+    <h2 class="text-2xl font-medium leading-[3.25rem] lg:text-[2rem]">Download the extension</h2>
+    <p class="text-[15px] opacity-50 lg:text-lg">
+      We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.
+    </p>
+  </div>
+
+  <div class="flex w-full flex-col items-center gap-10 px-12 lg:flex-row lg:justify-center">
+    <DownloadTab name="Chrome" image={google} ver={62} />
+    <DownloadTab name="Firefox" image={firefox} ver={55} />
+    <DownloadTab name="Opera" image={opera} ver={46} />
+  </div>
+</section>

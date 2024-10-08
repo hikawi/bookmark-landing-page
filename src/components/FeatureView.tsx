@@ -21,16 +21,17 @@ export default function FeatureView() {
   const feature = useStore($feature);
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="w-full pr-8">
+    <div className="flex flex-col gap-8 overflow-x-clip px-8 lg:flex-row xl:gap-32 xl:px-40">
+      <div className="relative w-full">
+        <div className="absolute -bottom-8 right-8 -z-10 h-4/5 w-[200%] rounded-full bg-soft-blue"></div>
         <img
           src={featurePics[feature].src}
           alt=""
-          className="size-full object-cover"
+          className="relative z-0 size-full object-cover"
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 px-8 lg:gap-8">
+      <div className="flex flex-col items-center justify-center gap-4 pt-8 lg:items-start lg:gap-8">
         <div className="flex flex-col text-center lg:gap-4 lg:text-left">
           <h3 className="text-2xl font-medium leading-[3.25rem] lg:text-[2rem]">
             {titles[feature]}
