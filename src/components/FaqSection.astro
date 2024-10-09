@@ -1,0 +1,60 @@
+---
+const questions = [
+  {
+    q: "What is Bookmark?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.",
+  },
+  {
+    q: "How can I request a new browser?",
+    a: "Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.",
+  },
+  {
+    q: "Is there a mobile app?",
+    a: "Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin ex et ultricies bibendum.",
+  },
+  {
+    q: "What about other Chromium browsers?",
+    a: "Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut velit.",
+  },
+];
+---
+
+<section class="flex flex-col items-center justify-center gap-14 px-8 pt-32 lg:pt-40">
+  <div class="flex max-w-[33.75rem] flex-col gap-4 text-center">
+    <h2 class="text-2xl font-medium leading-[1.875rem] lg:text-[2rem] lg:leading-[3.25rem]">Frequently Asked Questions</h2>
+    <p class="text-[15px] opacity-50 lg:text-lg">
+      Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.
+    </p>
+  </div>
+
+  <div class="flex w-full max-w-[33.75rem] flex-col pb-4 pt-2">
+    {
+      questions.map((question) => (
+        <details
+          name="faq"
+          class="group flex w-full items-center justify-center border-b-[1px] border-dark-blue border-opacity-15 px-5 py-5 marker:hidden lg:first-of-type:border-t-[1px]"
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] hover:text-soft-red group-focus:text-soft-red lg:text-lg">
+            <span>{question.q}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="12"
+              class="stroke-[#5267DF] duration-200 group-open:rotate-180 group-open:stroke-soft-red"
+            >
+              <path fill="none" stroke-width="3" d="M1 1l8 8 8-8" />
+            </svg>
+          </summary>
+
+          <p class="mt-8 text-[15px] leading-loose opacity-75 lg:text-base lg:leading-9">{question.a}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <button
+    class="h-12 rounded-md border-2 border-soft-blue bg-soft-blue px-6 text-sm font-medium text-white duration-200 hover:bg-white hover:text-soft-blue"
+  >
+    More info
+  </button>
+</section>

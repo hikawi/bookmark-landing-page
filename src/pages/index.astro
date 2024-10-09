@@ -1,8 +1,11 @@
 ---
 import DownloadSection from "../components/DownloadSection.astro";
+import FaqSection from "../components/FaqSection.astro";
 import FeaturesSection from "../components/FeaturesSection.astro";
+import FooterSection from "../components/FooterSection.astro";
 import HeroSection from "../components/HeroSection.astro";
 import NavSection from "../components/NavSection.astro";
+import SignupSection from "../components/SignupSection.astro";
 ---
 
 <html lang="en">
@@ -25,8 +28,13 @@ import NavSection from "../components/NavSection.astro";
 
   <body class="font-rubik text-dark-blue">
     <NavSection />
-    <HeroSection />
-    <FeaturesSection />
-    <DownloadSection />
+    <main>
+      <HeroSection />
+      <FeaturesSection />
+      <DownloadSection />
+      <FaqSection />
+      <SignupSection />
+    </main>
+    <FooterSection />
   </body>
 </html>
