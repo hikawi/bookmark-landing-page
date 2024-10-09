@@ -20,11 +20,16 @@ export default function EmailInput() {
             type="email"
             id="email"
             ref={emailInput}
-            className="relative ml-1 w-full outline-none"
-            autoFocus
+            className="peer relative ml-1 w-full outline-none"
             onInput={handleChange}
             aria-invalid={error}
           />
+          <label
+            htmlFor="email"
+            className="invisible absolute left-5 opacity-50 peer-empty:visible peer-focus:invisible"
+          >
+            Enter your email address
+          </label>
 
           {error && (
             <svg
