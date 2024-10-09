@@ -37,6 +37,7 @@ const questions = [
           <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] hover:text-soft-red group-focus:text-soft-red lg:text-lg">
             <span>{question.q}</span>
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="12"
@@ -58,3 +59,9 @@ const questions = [
     More info
   </button>
 </section>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

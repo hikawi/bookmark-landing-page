@@ -10,6 +10,7 @@ export default function Logo() {
       height="25"
       xmlns="http://www.w3.org/2000/svg"
       className="z-10"
+      aria-label="Bookmark Logo"
     >
       <g fill="none" fillRule="evenodd">
         <path
